@@ -1,0 +1,60 @@
+print(" Welcome to Quiz Mini Project ")
+print("-----------------------------------")
+
+questions = [
+    {
+        "question": "1) What is the capital of India?",
+        "options": ["A) Mumbai", "B) Delhi", "C) Kolkata", "D) Chennai"],
+        "answer": "B"
+    },
+    {
+        "question": "2) Which one is a programming language?",
+        "options": ["A) Python", "B) Mango", "C) Car", "D) Tea"],
+        "answer": "A"
+    },
+    {
+        "question": "3) Which symbol is used for comments in Python?",
+        "options": ["A) //", "B) #", "C) **", "D) &&"],
+        "answer": "B"
+    },
+    {
+        "question": "4) What is 10 + 5?",
+        "options": ["A) 12", "B) 10", "C) 15", "D) 20"],
+        "answer": "C"
+    },
+    {
+        "question": "5) Which keyword is used to define a function in Python?",
+        "options": ["A) func", "B) define", "C) def", "D) fun"],
+        "answer": "C"
+    }
+]
+
+score = 0
+
+for q in questions:
+    print("\n" + q["question"])
+    for option in q["options"]:
+        print(option)
+
+    user_answer = input("Enter your answer (A/B/C/D): ").upper()
+
+    if user_answer == q["answer"]:
+        print("✅ Correct!")
+        score += 1
+    else:
+        print("❌ Wrong!")
+        print("Correct Answer is:", q["answer"])
+
+print("\n-----------------------------------")
+print("🏁 Quiz Finished!")
+print("✅ Your Score:", score, "/", len(questions))
+
+percentage = (score / len(questions)) * 100
+print("📊 Percentage:", percentage, "%")
+
+if score == len(questions):
+    print("🌟 Excellent! Full marks!")
+elif score >= 3:
+    print("👍 Good job!")
+else:
+    print("🙂 Keep practicing!")
